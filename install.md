@@ -20,13 +20,13 @@ There are three options for setting up your development environment. Choose *onl
 
 ## Use GitHub Codespaces
 
-The [GitHub repository for this lab](https://github.com/Azure-Samples/java-microservices-aca-lab) contains a devcontainer.json file configured for Java development. If your account is enabled for [GitHub Codespaces](https://github.com/features/codespaces), you can use this file to create a cloud development environment that contains all of the tools you’ll need to complete this lab.
+The [GitHub repository for this lab](https://github.com/Azure-Samples/java-on-aca) contains a devcontainer.json file configured for Java development. If your account is enabled for [GitHub Codespaces](https://github.com/features/codespaces), you can use this file to create a cloud development environment that contains all of the tools you’ll need to complete this lab.
 
 This approach has the advantage of giving you a fully configured development environment without requiring any software installation or configuration on your local workstation.
 
 To proceed with this option:
 
-1.  Go to [this lab’s GitHub repository](https://github.com/Azure-Samples/java-microservices-aca-lab), and select **Fork**.
+1.  Go to [this lab’s GitHub repository](https://github.com/Azure-Samples/java-on-aca), and select **Fork**.
 1.  Be sure that your own username is indicated as the fork Owner.
 1.  Select **Create fork**. This creates a copy (or fork) of this project in your own account.
 
@@ -41,9 +41,9 @@ The codespace creation status is displayed in your browser window. After the cre
 
 ## Use Visual Studio Code with remote containers
 
-The [git repository of this lab](https://github.com/Azure-Samples/java-microservices-aca-lab) includes a dev container for Java development, which has all the needed tools for running this lab. For this option, you need the following tools to be installed on your local workstation.
+The [git repository of this lab](https://github.com/Azure-Samples/java-on-aca) includes a dev container for Java development, which has all the needed tools for running this lab. For this option, you need the following tools to be installed on your local workstation.
 
-Alternatively, you can use Docker and the [Visual Studio Code Dev Containers extension](https://code.visualstudio.com/docs/remote/containers) to deploy a preconfigured dev container on your local workstation. Using the same devcontainer.json file in the [Git repository of this lab](https://github.com/Azure-Samples/java-microservices-aca-lab) noted in the GitHub Codespaces option, you can easily configure a Java development container that has all the tools you need to run this lab.
+Alternatively, you can use Docker and the [Visual Studio Code Dev Containers extension](https://code.visualstudio.com/docs/remote/containers) to deploy a preconfigured dev container on your local workstation. Using the same devcontainer.json file in the [Git repository of this lab](https://github.com/Azure-Samples/java-on-aca) noted in the GitHub Codespaces option, you can easily configure a Java development container that has all the tools you need to run this lab.
 
 This type of containerized approach allows you to quickly deploy a ready-to-use development environment. However, unlike with the GitHub Codespaces option, you need to perform the following tasks to get this working on your local workstation:
 
@@ -66,7 +66,7 @@ This type of containerized approach allows you to quickly deploy a ready-to-use 
 
 To get started working in the dev container:
 
-1.  Go to [this lab’s GitHub repository](https://github.com/Azure-Samples/java-microservices-aca-lab), and select **Fork**.
+1.  Go to [this lab’s GitHub repository](https://github.com/Azure-Samples/java-on-aca), and select **Fork**.
 1.  Be sure that your own username is indicated as the fork Owner.
 1.  Select **Create fork**. This creates a copy (or fork) of this project in your own account.
 
@@ -78,7 +78,7 @@ To get started working in the dev container:
     ```bash
     mkdir workspaces
     cd workspaces
-    git clone https://github.com/\<your-github-account\>/java-microservices-aca-lab.git
+    git clone https://github.com/\<your-github-account\>/java-on-aca.git
     ```
 
 1.  When prompted to sign in to GitHub, select **Sign in with your browser**. This will automatically open a new tab in the web browser window, prompting you to provide your GitHub username and password.
@@ -88,12 +88,12 @@ To get started working in the dev container:
     {: .note }
     > In later lab steps, you’ll put a GitHub PAT (Personal Access Token) in one of the configuration files. Make sure you **do not** commit this PAT, since it will immediately get invalidated by GitHub and your next lab steps will fail. To recover from this, refer to the [LabTips]({% link tips.md %}).
 
-1.  Go to the java-microservices-aca-lab folder where you cloned the project, and open the project with Visual Studio Code.
+1.  Go to the java-on-aca folder where you cloned the project, and open the project with Visual Studio Code.
 
     ```bash
     mkdir workspaces
     cd workspaces
-    git clone https://github.com/<your-github-account>/java-microservices-aca-lab.git
+    git clone https://github.com/<your-github-account>/java-on-aca.git
     ```
 
 1.  With the [Visual Studio Code Remote Containers extension](https://code.visualstudio.com/docs/remote/containers) installed, you can now open the project in a remote container. This will reopen the project in a Docker container with all the tooling installed.
@@ -159,7 +159,7 @@ Your workstation should have the following components installed:
 
 After all these tools are installed, you can get started:
 
-1.  Go to [this lab’s GitHub repository](https://github.com/Azure-Samples/java-microservices-aca-lab), and select **Fork**.
+1.  Go to [this lab’s GitHub repository](https://github.com/Azure-Samples/java-on-aca), and select **Fork**.
 1.  Be sure that your own username is indicated as the fork Owner.
 1.  Select **Create fork**. This creates a copy (or fork) of this project in your own account.
 
@@ -171,15 +171,15 @@ After all these tools are installed, you can get started:
     ```bash
     mkdir workspaces
     cd workspaces
-    git clone https://github.com/<your-github-account>/java-microservices-aca-lab.git
+    git clone https://github.com/<your-github-account>/java-on-aca.git
     ```
 
 1.  When prompted to sign in to GitHub, select **Sign in with your browser**. This will automatically open a new tab in the web browser window, prompting you to provide your GitHub username and password..
 1.  In the browser window, enter your GitHub credentials and select **Sign in**. After you’ve signed in successfully, close the newly opened browser tab.
 1.  In your workspaces folder, verify that the spring-petclinic-microservices application was cloned correctly. You can use this local copy of the repository to regularly push changes to your fork on GitHub.
-1.  Go to the java-microservices-aca-lab folder where you cloned the project, and open the project with Visual Studio Code.
+1.  Go to the java-on-aca folder where you cloned the project, and open the project with Visual Studio Code.
 
     ```bash
-    cd java-microservices-aca-lab
+    cd java-on-aca
     code .
     ```

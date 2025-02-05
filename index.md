@@ -20,7 +20,7 @@ As you work through the lab modules, you’ll explore the following:
 * Instructions for automatically deploying applications to Azure
 * Guidance on building reliable Java apps on Azure Container Apps
 
-You can review the contents of this lab as GitHub pages at [Java microservices on ACA](https://azure-samples.github.io/java-microservices-aca-lab/).
+You can review the contents of this lab as GitHub pages at the [Java on ACA](https://azure-samples.github.io/java-on-aca/) site.
 
 ## Getting Started
 
