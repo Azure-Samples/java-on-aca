@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: java-microservices-aca-lab
+name: java-on-aca
 metadata:
-  template: java-microservices-aca-lab
+  template: java-on-aca
 
 workflows:
   up:
@@ -23,7 +23,7 @@ services:
     docker:
       registry: ${AZURE_CONTAINER_REGISTRY_ENDPOINT}
       path: ./ai.Dockerfile
-      image: java-microservices-aca-lab/spring-petclinic-api-gateway
+      image: java-on-aca/spring-petclinic-api-gateway
       tag: ${AZD_PROVISION_TIMESTAMP}
       remoteBuild: true
 
@@ -35,7 +35,7 @@ services:
     docker:
       registry: ${AZURE_CONTAINER_REGISTRY_ENDPOINT}
       path: ./ai.Dockerfile
-      image: java-microservices-aca-lab/spring-petclinic-customers-service
+      image: java-on-aca/spring-petclinic-customers-service
       tag: ${AZD_PROVISION_TIMESTAMP}
       remoteBuild: true
 
@@ -47,7 +47,7 @@ services:
     docker:
       registry: ${AZURE_CONTAINER_REGISTRY_ENDPOINT}
       path: ./ai.Dockerfile
-      image: java-microservices-aca-lab/spring-petclinic-vets-service
+      image: java-on-aca/spring-petclinic-vets-service
       tag: ${AZD_PROVISION_TIMESTAMP}
       remoteBuild: true
 
@@ -59,7 +59,7 @@ services:
     docker:
       registry: ${AZURE_CONTAINER_REGISTRY_ENDPOINT}
       path: ./ai.Dockerfile
-      image: java-microservices-aca-lab/spring-petclinic-visits-service
+      image: java-on-aca/spring-petclinic-visits-service
       tag: ${AZD_PROVISION_TIMESTAMP}
       remoteBuild: true
 
@@ -71,7 +71,7 @@ services:
     docker:
       registry: ${AZURE_CONTAINER_REGISTRY_ENDPOINT}
       path: ./ai.Dockerfile
-      image: java-microservices-aca-lab/spring-petclinic-chat-agent
+      image: java-on-aca/spring-petclinic-chat-agent
       tag: ${AZD_PROVISION_TIMESTAMP}
       remoteBuild: true
 
