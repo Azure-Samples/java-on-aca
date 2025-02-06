@@ -27,4 +27,4 @@ If you're finished with the resources that you created for these labs, clean up 
 
    {: .note }
 
-   >  It can take roughly 30 minutes to delete all these resources. With the option `--no-wait`, you can run this long-running command without waiting for it to finish.
+   >  It can take roughly 30 minutes to delete all these resources. With the option `--no-wait`, you can execute this long-running command without waiting for it to finish.
