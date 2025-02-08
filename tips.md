@@ -1,173 +1,82 @@
 ---
-title: 'Lab Tips and troubleshooting'
+title: 'Lab tips and troubleshooting'
 layout: home
 nav_order: 99
 ---
 
-# A couple of tips when you run this lab
+# Tips for best results with the lab
 {: .no_toc }
 
-An overview of the tips in this section:
+Tips in this section include:
 
 - TOC
 {:toc}
 
-## Use Codespaces
+## Use GitHub Codespaces
 
-The best and easiest way to run this lab is definitely through the use of a codespace. It has all the tools pre-installed for you. All the steps as well have been tested through the codespace that is included in the repo. The second best alternative is using Visual Studio Code locally with the remote containers option.
+As described in the [installation instructions]({% link install.md %}), the best and easiest way to run this lab is to use [GitHub Codespaces](https://github.com/features/codespaces). With the devcontainer.json file provided in the lab's [GitHub repository](https://github.com/Azure-Samples/java-on-aca) you can create a codespace that has the required tools pre-installed and configured for you. The steps in this lab have been thoroughly tested with the codespace configuration included in the repo. 
 
-The least best option is with a local install of all the tooling. You can get unexpected errors when using this option. Try to avoid it if you can. We still provide it as an alternative for people who really can't use the codespace or remote containers.
+If you're unable to use a codespace, the best alternative is Visual Studio Code with remote containers, which allows you to deploy and work with a preconfigured Docker development environment. 
 
-## .azcli files will save your day
+If you can't use either of these options, you can complete this lab by installing the required tooling on your local environment. However, since it’s impossible for us to test all lab steps with every possible local configuration, we highly recommend using either GitHub Codespaces or the Visual Studio Code with remote containers.
 
-In case you are using Visual Studio Code, you can record your statements in a file with the _.azcli_ extension. This extension in combination with the [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) gives you extra capabilities like IntelliSense and directly running a statement from the script file in the terminal window. 
+## Use .azcli files to work more efficiently 
 
-When using this extension you can keep a record of all the steps you executed in an _.azcli_ file and quickly execute these statements through the `Ctrl+'` shortcut. Check out the extension, it will save you time in the lab!
+If you're using Visual Studio Code, you can record the command-line statements that you execute in a file with the _.azcli_ extension. This extension, combined with the [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) extension, gives you extra capabilities, like IntelliSense, and the opportunity to directly run statements from the script file in a terminal window. 
 
-## On error perform these steps
+With this extension, you can keep a record in an .azcli file of all the steps that you executed and quickly execute these statements through the `Ctrl+` shortcut. To save time and effort in this lab, be sure to check out the extension.
 
-There are a couple of places in the lab where the steps you need to execute include easy to miss steps. In case of any error the default way to recover from the error is:
+# Troubleshoot issues
 
-1. re-check whether you executed each step.
+There are a couple places in the lab where you can easily to miss steps or incorrectly execute a statement. If you run into errors as a result,  try the following debug steps:
 
-1. Check all YAML indentation.
+1.	Carefully recheck the lab instructions to make sure that you executed each step.
 
-1. Check whether you saved all the files that have changes.
+1.	Confirm that all YAML is correctly indented and lacks formatting errors.
 
-1. Check the logs of the specific failing microservice.
+1.	Check to ensure that you saved all the files you modified.
+
+1.	Check the logs for the failing application or service.
 
    ```bash
-   kubectl logs <pod-name>
+   az containerapp logs show -g $RESOURCE_GROUP -n <APP_NAME> 
    ```
 
-### In case you made a coding error
+### Dealing with code errors
 
-In case you see you made a coding error, you will need to rebuild and redeploy the specific failing microservice.
+If you find coding issues that lead to errors, fix the issues and then rebuild and redeploy the affected application.
 
-To rebuild and redeploy a failing microservice:
+To rebuild and redeploy an application:
 
-1. Navigate to the root of the application and rebuild the specific microservice.
+1. Go to the repo's src folder, and rebuild the application that contains the code you fixed.
 
    ```bash
-   cd ~/workspaces/java-microservices-aca-lab/src
+   cd ~/workspaces/java-on-aca/src
    mvn clean package -DskipTests -rf :spring-petclinic-<microservice-name>
    ```
 
-1.  Rebuild the container image for the microservice. Navigate to the _acr-staging_ directory, copy over the compiled jar file and rebuild the container.
+1. Update the affected container app instance.
 
    ```bash
-   cd staging-acr
-   rm spring-petclinic-<microservice-name>-$VERSION.jar
-   cp ../spring-petclinic-<microservice-name>/target/spring-petclinic-<microservice-name>-$VERSION.jar spring-petclinic-<microservice-name>-$VERSION.jar
-   
-   docker build -t $MYACR.azurecr.io/spring-petclinic-<microservice-name>:$VERSION \
-       --build-arg ARTIFACT_NAME=spring-petclinic-<microservice-name>-$VERSION.jar \
-       --build-arg APP_PORT=8888 \
-       --build-arg AI_JAR=ai.jar \
-       .
-
-   docker push $MYACR.azurecr.io/spring-petclinic-<microservice-name>:$VERSION
+   az containerapp update \
+      --name $APP_NAME \
+      --resource-group $RESOURCE_GROUP \
+      --source ./spring-petclinic-$APP_NAME
    ```
 
-   {: .note }
-   > In case you have issues in lab 2, remove the line `--build-arg AI_JAR=ai.jar` from the above statement. This is only needed as of lab 3.
+## Work around issues when using a codespace
 
-1. Restart the pod.
+If you're using a codespace and running  the labs in a subscription with policies that lock down what you're allowed to do, you might encounter errors when performing certain steps. The currently known failures include:
 
-   ```bash
-   kubectl get pods
-   kubectl delete pod <pod-name> 
-   ```
+- Not Authorized on some operations. Specifically, this can happen on operations using managed identities and Azure Key Vault, where policy settings on the subscription prevent you from running them from a codespace.
 
-### Config error
+To recover from this issue, re-execute the failed step [using an Azure Cloud Shell window](https://learn.microsoft.com/en-us/azure/cloud-shell/using-the-shell-window).
 
-In case you made an error in the config repo. Fixing that error in the config repo and restarting services should be enough to recover:
 
-1. Fix the error in the config repo, save the file, commit and push the changes:
+## Persist environment variables in a codespace
 
-   ```bash
-   git add .
-   git commit -m 'your commit message'
-   git push
-   ```
+When you use  a codespace to run this lab, your environment variables will be lost if the codespace restarts. To avoid this issue, follow [GitHub's guidance on persisting variables](https://docs.github.com/en/enterprise-cloud@latest/codespaces/developing-in-codespaces/persisting-environment-variables-and-temporary-files). We recommend the [single codespace](https://docs.github.com/en/enterprise-cloud@latest/codespaces/developing-in-codespaces/persisting-environment-variables-and-temporary-files#for-a-single-codespace) approach, since it's the easiest to set up and doesn't require a workspace restart.
 
-1. Restart the config server pod
+The help you get started with this method, you can find a [samplebashrc file](https://github.com/Azure-Samples/java-on-aca/blob/main/solution/samplebashrc) in the lab's repository. Before proceeding, you'll need to update this file with the relevant unique values for your environment before proceeding.
 
-   ```bash
-   kubectl get pods
-   kubectl delete pod <config-server-pod> 
-   ```
-
-1. Wait for the config server to be properly up and running again
-
-   ```bash
-   kubectl get pods -w
-   ```
-
-1. In case the config server pod is reporting a `CrashLoopBackoff`, inspect the logs.
-
-   ```bash
-   kubectl logs <config-server-pod> 
-   ```
-
-1. Restart any pods that depend on the new config.
-
-   ```bash
-   kubectl get pods
-   kubectl delete pod <config-dependent-pod> 
-   ```
-
-### In case there is an error in the kubernetes/*.yml files
-
-1. Fix the error in the kubernetes/*.yml file
-
-1. re-apply the yaml file.
-
-   ```bash
-   cd ~/workspaces/java-microservices-aca-lab/src/kubernetes
-   kubectl apply -f spring-petclinic-<service-name>.yml
-   ```
-
-1. check whether the failing pod starts up properly.
-
-   ```bash
-   kubectl get pods -w
-   ```
-
-## Not all steps are running smoothly in the codespace (unfortunately)
-
-It might be that some steps do not run smoothly in a codespace on some more locked down environments.
-
-In case you use a subscription that has additional policies that lock down what you are allowed to do in the subscription, this might make some of the steps fail. The currently known failures include:
-
-- Not Authorized on some operations: specifically operations on managed identities and Key Vault might suffer from policy settings on the subscription when you run them from a codespace.
-
-How to recover: re-execute the step in a cloud shell window.
-
-## Don't commit your GitHub PAT token
-
-In Lab 2 you will make use of a hard-coded GitHub PAT token inside the code of the `config-server`. This token will be removed again during the course of lab 4. 
-
-As long as the GitHub PAT token is inside the code of the `config-server`, do not commit this code to any GitHub repository. Once you accidentally push the GitHub PAT token, it will immediately get invalidated by GitHub, and hence it will become unusable. This will make your config-server fail!
-
-In case this accidentally happens to you, you will need to recreate or re-issue the PAT token and perform a full rebuild and redeploy of the config server with the new GitHub PAT.
-
-In case you still might want to commit and push your code changes to GitHub, make sure to exclude the _application.yml_ file from the config-server.
-
-### In case the GitHub PAT really doesn't work for you
-
-Ok, you tried accessing the private config repo through the PAT experience, but unfortunately this keeps on failing for you. We've seen this happen from time to time for some people. No worries, you tried, we are very happy that you did. But it would also be great if you could continue through the lab without this PAT constantly failing on you.
-
-Before executing the below fix, do understand that during the execution of the lab your config repo **will** contain secret values for certain resources of the lab. Make sure your do **not** use any password values that you use anywhere else (you shouldn't do that anyways by the way).
-
-So no worries, make your config repo public and proceed! You may need to also restart your config repo pod to get everything up and running again.
-
-## Persisting environment variables in a GitHub Codespace
-
-In case you are using a codespace for running this lab, your environment variables will be lost if the codespace restarts. For persisting these environment variables, you can either use the [guidance that GitHub provides for this](https://docs.github.com/en/enterprise-cloud@latest/codespaces/developing-in-codespaces/persisting-environment-variables-and-temporary-files). We recommend the [single workspace](https://docs.github.com/en/enterprise-cloud@latest/codespaces/developing-in-codespaces/persisting-environment-variables-and-temporary-files#for-a-single-codespace) approach, since that is the easiest to set up and doesn't require workspace restart.
-
-You can find a [samplebashrc file](https://github.com/Azure-Samples/java-microservices-aca-lab/blob/main/solution/samplebashrc) in this repository. You will need to update a couple of values in this file for your specific situation.
-
-Another approach would be to create a dedicated _.azcli_ file where you keep all environment variables. After a workspace restart, you first rerun all the steps in this file and you are good to go again.
-
-You can find a [sampleENVIRONMENT.azcli file](https://github.com/Azure-Samples/java-microservices-aca-lab/blob/main/solution/sampleENVIRONMENT.azcli) in this repository. You will need to update a couple of values in this file for your specific situation.
+Another approach would be to create a dedicated .azcli file to keep your environment variables. After a workspace restart, you first rerun all the steps in this file and then you can proceed. If you’d like to try this approach, you can find a [sampleENVIRONMENT.azcli file](https://github.com/Azure-Samples/java-on-aca/blob/main/solution/sampleENVIRONMENT.azcli) file in this repository, which you’ll need to update with the relevant values for your environment before using.
