@@ -12,11 +12,11 @@ Before you begin working through the lab, you’ll need to make sure that you ha
 
 There are three options for setting up your development environment. Choose *only one* of the following:
 
-- TOC {:toc}
+- TOC
+{:toc}
 
-    {: .important }
-    > We’ve tested all the steps of this lab in [GitHub Codespaces](#use-github-codespaces), which is the simplest way to get going and the preferred option for running the lab.
-
+{: .important }
+> We’ve tested all the steps of this lab in [GitHub Codespaces](#use-github-codespaces), which is the simplest way to get going and the preferred option for running the lab.
 
 ## Use GitHub Codespaces
 

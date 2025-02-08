@@ -1,7 +1,7 @@
 ---
 title: 'Lab 4: Connect to a database with managed identity'
-layout: default  
-nav_order: 6  
+layout: default
+nav_order: 6
 has_children: true
 ---
 
@@ -11,9 +11,9 @@ has_children: true
 
 You now have your copy of the Spring Petclinic Microservices workload running in Azure. However, your applications use secrets, such as your database connection string, which depend on passwords that are stored in your configuration repository.
 
-Passwords are insecure. They can be stolen, guessed, or found via brute force attacks, so protecting your passwords can be a major challenge. You want to find a way to connect to your database without having to deal with this potential vulnerability. 
+Passwords are insecure. They can be stolen, guessed, or found via brute force attacks, so protecting your passwords can be a major challenge. You want to find a way to connect to your database without having to deal with this potential vulnerability.
 
-In this lab, you’ll implement a more secure way to protect your secrets by connecting your applications to your database using managed identities and [Azure Service Connector](https://learn.microsoft.com/azure/service-connector/overview). This approach allows you to implement secure passwordless connectivity without modifying your application code, giving you  a ["zero code, zero secrets, and zero trust"](https://learn.microsoft.com/azure/developer/intro/passwordless-overview) solution. 
+In this lab, you’ll implement a more secure way to protect your secrets by connecting your applications to your database using managed identities and [Azure Service Connector](https://learn.microsoft.com/azure/service-connector/overview). This approach allows you to implement secure passwordless connectivity without modifying your application code, giving you  a ["zero code, zero secrets, and zero trust"](https://learn.microsoft.com/azure/developer/intro/passwordless-overview) solution.
 
 ## What you’ll cover
 

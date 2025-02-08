@@ -1,7 +1,7 @@
 ---
-title: 'Lab 3: Enable monitoring'  
-layout: default  
-nav_order: 5  
+title: 'Lab 3: Enable monitoring'
+layout: default
+nav_order: 5
 has_children: true
 ---
 
