@@ -1,75 +1,30 @@
 ---
-title: Clean up resources
+title: Clean up lab resources
 layout: home
 nav_order: 90
 ---
 
-# Cleanup
+# Clean up lab resources
 {: .no_toc }
 
-If you're not going to continue to use this lab environment, run the following command to delete the resource group along with all the resources created in this lab.
+If you're finished with the resources that you created for these labs, clean up your lab environment by deleting them and the resource group that contains them.
 
-- TOC
-{:toc}
+1. Clean up the Azure OpenAI Service instance (optional). 
 
-{: .note }
-> There is a known issue when delete OpenAI instance, [Azd down on OpenAI instance](https://github.com/Azure/azure-dev/issues/4210), extra steps required to delete all the resources.
-
-## Delete environment created by Azd automation
-
-1. Prepare
-
-   - Set config flag for OpenAI instance
-  
-     ```bash
-     azd config set alpha.deployment.stacks on
-     ```
-
-1. Tear down the azd environment
-
-   - list all the azd environments
-
-     ```bash
-     azd env list
-     ```
-
-   - run `` to clean up the target environment
-
-     ```bash
-     azd down -e <env-name> --force --purge
-     ```
-
-## Delete environment created by manual steps
-
-1. Clean up the Azure Cognitive Services account
-
-   - list the deployments
-
-     ```bash
-     az cognitiveservices account deployment list -g $RESOURCE_GROUP -n $OPEN_AI_SERVICE_NAME -o table
-     ```
-
-   - delete the deployments one by one
-
-     ```bash
-     az cognitiveservices account deployment delete -g $RESOURCE_GROUP -n $OPEN_AI_SERVICE_NAME --deployment-name gpt-4o
-     az cognitiveservices account deployment delete -g $RESOURCE_GROUP -n $OPEN_AI_SERVICE_NAME --deployment-name text-embedding-ada-002
-     ```
-
-   - delete the Azure Cognitive Services account
+   If you completed the optional [Lab 5]({% link docs/05_lab_openai/05_openlab_openai_aca.md %}), you created a new Azure OpenAI instance. Use the following command to delete it before you delete any other resources. If you didn't complete Lab 5, you can ignore this step.
 
      ```bash
      az cognitiveservices account delete -g $RESOURCE_GROUP -n $OPEN_AI_SERVICE_NAME
      ```
 
-1. Delete the resource group with all the resources
+1. Delete the resource group that you created for these labs, along with any resources that it contains.
 
    ```bash
-   az group delete --name $RESOURCE_GROUP
+   az group delete --name $RESOURCE_GROUP --yes --no-wait
 
    az configure --default group=''
    ```
 
-{: .note }
+   {: .note }
 
-> It takes about 30 minutes to delete all the resources in the environment.
+   >  It can take roughly 30 minutes to delete all these resources. With the option `--no-wait`, you can execute this long-running command without waiting for it to finish.

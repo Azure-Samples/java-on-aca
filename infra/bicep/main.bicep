@@ -45,7 +45,7 @@ param sqlAdmin string = 'sqladmin'
 param sqlAdminPassword string = newGuid()
 
 @description('Repo url of the configure server.')
-param configGitRepo string = 'https://github.com/Azure-Samples/java-microservices-aca-lab'
+param configGitRepo string = 'https://github.com/Azure-Samples/java-on-aca'
 @description('Repo branch of the configure server.')
 param configGitBranch string = 'main'
 @description('Repo path of the configure server.')
@@ -98,7 +98,7 @@ var infraSubnetName = '${abbrs.networkVirtualNetworksSubnets}infra'
 var abbrs = loadJsonContent('./abbreviations.json')
 var tags = {
   'azd-env-name': environmentName
-  'java-acc-samples-java-microservices-aca-lab': true
+  'java-acc-samples-java-on-aca': 'true'
   'utc-time': utcValue
 }
 
