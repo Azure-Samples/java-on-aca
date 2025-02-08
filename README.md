@@ -1,9 +1,9 @@
 # Deploying and running Java Applications with AI in Azure Container Apps
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/java-microservices-aca-lab)
-[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/azure-samples/java-microservices-aca-lab)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/java-on-aca)
+[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/azure-samples/java-on-aca)
 
-This project shows how to deploy the [Spring Petclinic Microservices](https://github.com/Azure-Samples/java-microservices-aca-lab/tree/main/src) application with OpenAI to [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) and integrate it with additional Azure services, also some samples for Azure Container Apps features.
+This project shows how to deploy the [Spring Petclinic Microservices](https://github.com/Azure-Samples/java-on-aca/tree/main/src) application with OpenAI to [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) and integrate it with additional Azure services, also some samples for Azure Container Apps features.
 
 [Features](#features) • [Gettting Started](#getting-started) • [Guidance](#guidance)
 
@@ -26,11 +26,11 @@ The following technologies are part of the project:
 
 This project provides the following features:
 
-* A [Spring Petclinic Microservices](https://github.com/Azure-Samples/java-microservices-aca-lab/tree/main/src) deployment on Azure Container Apps with AI chat agent.
+* A [Spring Petclinic Microservices](https://github.com/Azure-Samples/java-on-aca/tree/main/src) deployment on Azure Container Apps with AI chat agent.
 * Azure Container Apps java components ([eureka server](https://learn.microsoft.com/en-us/azure/container-apps/java-eureka-server-usage) /[config server](https://learn.microsoft.com/en-us/azure/container-apps/java-config-server-usage) / [spring boot admin](https://learn.microsoft.com/en-us/azure/container-apps/java-admin-for-spring-usage)) support.
-* [Bicep files](https://docs.microsoft.com/azure/azure-resource-manager/bicep/) for provisioning Azure resources, including Azure OpenAI, Azure Container Apps, Azure Database for MySQL - Flexible Server, Azure Container Registry, Azure Log Analytics, Azure Application Insights and RBAC roles. See [Deploy to Azure automatically](https://azure-samples.github.io/java-microservices-aca-lab/docs/06_lab_automation/06_openlab_automation.html).
-* Best practices to build [more secure](https://azure-samples.github.io/java-microservices-aca-lab/docs/07_lab_security/07_openlab_security_aca.html), [more reliable](https://azure-samples.github.io/java-microservices-aca-lab/docs/10_lab_reliable_application/10_reliable_java_aca.html) and [more flexible](https://azure-samples.github.io/java-microservices-aca-lab/docs/11_lab_scale/11_openlab_scale_aca.html) java apps on Azure Container Apps.
-* AI chat agent to take advantage of large-scale, generative AI models with deep understandings of language and code to enable new reasoning and comprehension capabilities. See [Integrate with Azure OpenAI](https://azure-samples.github.io/java-microservices-aca-lab/docs/05_lab_openai/05_openlab_openai_aca.html)
+* [Bicep files](https://docs.microsoft.com/azure/azure-resource-manager/bicep/) for provisioning Azure resources, including Azure OpenAI, Azure Container Apps, Azure Database for MySQL - Flexible Server, Azure Container Registry, Azure Log Analytics, Azure Application Insights and RBAC roles. See [Deploy to Azure automatically](https://azure-samples.github.io/java-on-aca/docs/06_lab_automation/06_openlab_automation.html).
+* Best practices to build [more secure](https://azure-samples.github.io/java-on-aca/docs/07_lab_security/07_openlab_security_aca.html), [more reliable](https://azure-samples.github.io/java-on-aca/docs/10_lab_reliable_application/10_reliable_java_aca.html) and [more flexible](https://azure-samples.github.io/java-on-aca/docs/11_lab_scale/11_openlab_scale_aca.html) java apps on Azure Container Apps.
+* AI chat agent to take advantage of large-scale, generative AI models with deep understandings of language and code to enable new reasoning and comprehension capabilities. See [Integrate with Azure OpenAI](https://azure-samples.github.io/java-on-aca/docs/05_lab_openai/05_openlab_openai_aca.html)
 
 ![Screenshot of the chat app](./images/acalab-ai-chat.png)
 
@@ -50,17 +50,17 @@ All the steps of this lab have been tested in the GitHub CodeSpace. This is the 
 
 ### GitHub Codespaces
 
-* Prepare the environment following the steps in [Using a GitHub codespace](https://azure-samples.github.io/java-microservices-aca-lab/install.html#using-a-github-codespace)
+* Prepare the environment following the steps in [Using a GitHub codespace](https://azure-samples.github.io/java-on-aca/install.html#using-a-github-codespace)
 * Continue with [deploying steps](#deploying)
 
 ### VS Code Dev Containers
 
-* Prepare the environment following the steps in [Using Visual Studio Code with remote containers](https://azure-samples.github.io/java-microservices-aca-lab/install.html#using-a-github-codespace)
+* Prepare the environment following the steps in [Using Visual Studio Code with remote containers](https://azure-samples.github.io/java-on-aca/install.html#using-a-github-codespace)
 * Continue with [deploying steps](#deploying)
 
 ### Local Environment
 
-* Prepare the environment following the steps in [Install all the tools on your local machine](https://azure-samples.github.io/java-microservices-aca-lab/install.html#install-all-the-tools-on-your-local-machine)
+* Prepare the environment following the steps in [Install all the tools on your local machine](https://azure-samples.github.io/java-on-aca/install.html#install-all-the-tools-on-your-local-machine)
 * Continue with [deploying steps](#deploying)
 
 ### Deploying
@@ -113,7 +113,7 @@ For running this lab you will need:
 
 1. This template uses [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview) deployment mododules **gpt-4o** and **text-embedding-ada-002** which may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#standard-deployment-model-availability) and select a region during deployment accordingly
 
-1. The template uses [Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/overview) version 8.0 to store data. You may select a region suite for this service. Or create a database instance manually then [Reuse existing service](https://azure-samples.github.io/java-microservices-aca-lab/docs/06_lab_automation/0604.html).
+1. The template uses [Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/overview) version 8.0 to store data. You may select a region suite for this service. Or create a database instance manually then [Reuse existing service](https://azure-samples.github.io/java-on-aca/docs/06_lab_automation/0604.html).
 
   * We recommend using **East US**, **East US 2**, **North Central US**, **Sweden Central**.
 
@@ -134,5 +134,5 @@ Applications can use managed identities to obtain Microsoft Entra tokens without
 
 ## Resources
 
-* Go to the lab for more details [Deploying and running Java Applications with AI in Azure Container Apps](https://azure-samples.github.io/java-microservices-aca-lab/)
+* Go to the lab for more details [Deploying and running Java Applications with AI in Azure Container Apps](https://azure-samples.github.io/java-on-aca/)
 * Full installation guidance and options for running this lab can be found in the [Installation instructions](install.md).

@@ -20,13 +20,13 @@ If you're unable to use a codespace, the best alternative is Visual Studio Code 
 
 If you can't use either of these options, you can complete this lab by installing the required tooling on your local environment. However, since it’s impossible for us to test all lab steps with every possible local configuration, we highly recommend using either GitHub Codespaces or the Visual Studio Code with remote containers.
 
-## Use .azcli files to work more efficiently 
+## Use .azcli files to make command line work easier 
 
 If you're using Visual Studio Code, you can record the command-line statements that you execute in a file with the _.azcli_ extension. This extension, combined with the [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) extension, gives you extra capabilities, like IntelliSense, and the opportunity to directly run statements from the script file in a terminal window. 
 
 With this extension, you can keep a record in an .azcli file of all the steps that you executed and quickly execute these statements through the `Ctrl+` shortcut. To save time and effort in this lab, be sure to check out the extension.
 
-# Troubleshoot issues
+## Troubleshoot issues
 
 There are a couple places in the lab where you can easily to miss steps or incorrectly execute a statement. If you run into errors as a result,  try the following debug steps:
 
