@@ -52,12 +52,12 @@ Each of the java based applications is started with the `chaos-monkey` profile i
 
 You can then access petclinic here: http://localhost:8080/
 
-![Spring Petclinic Microservices screenshot](docs/application-screenshot.png)
+![Spring Petclinic screenshot](docs/application-screenshot.png)
 
 
 **Architecture diagram of the Spring Petclinic Microservices**
 
-![Spring Petclinic Microservices architecture](docs/microservices-architecture-diagram.jpg)
+![Spring Petclinic architecture](docs/microservices-architecture-diagram.jpg)
 
 
 ## In case you find a bug/suggested improvement for Spring Petclinic Microservices

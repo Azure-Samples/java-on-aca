@@ -9,7 +9,7 @@ has_children: true
 
 ## Introduction
 
-In the previous lab, you reviewed the sample Spring Petclinic Microservices workload that you’ll deploy, examined the Azure services that the component Spring applications will rely on, and made sure that the necessary tooling is configured and ready in your development environment. Now it’s time to deploy the workload to an Azure Container Apps instance.
+In the previous lab, you reviewed the sample Spring Petclinic workload that you’ll deploy, examined the Azure services that the component Spring applications will rely on, and made sure that the necessary tooling is configured and ready in your development environment. Now it’s time to deploy the workload to an Azure Container Apps instance.
 
 ## What you’ll cover
 

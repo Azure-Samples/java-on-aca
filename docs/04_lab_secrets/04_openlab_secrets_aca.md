@@ -9,7 +9,7 @@ has_children: true
 
 ## Introduction
 
-You now have your copy of the Spring Petclinic Microservices workload running in Azure. However, your applications use secrets, such as your database connection string, which depend on passwords that are stored in your configuration repository.
+You now have your copy of the Spring Petclinic workload running in Azure. However, your applications use secrets, such as your database connection string, which depend on passwords that are stored in your configuration repository.
 
 Passwords are insecure. They can be stolen, guessed, or found via brute force attacks, so protecting your passwords can be a major challenge. You want to find a way to connect to your database without having to deal with this potential vulnerability.
 

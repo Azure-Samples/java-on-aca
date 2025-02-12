@@ -4,9 +4,9 @@ layout: home
 nav_order: 1
 ---
 
-# Lab: Deploy and run Java applications on Azure Container Apps
+# Lab: Java and AI
 
-In this lab, you’ll learn how to deploy Java applications to [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) and integrate them with additional Azure services. You’ll also deploy a copy of the Spring Petclinic Microservices sample workload to find out how Azure Container Apps supports Azure Spring Apps that use managed components.
+In this lab, you’ll learn how to deploy intelligent Java applications to [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) and integrate them with additional Azure services. You’ll also deploy a copy of the Spring Petclinic sample workload to find out how Azure Container Apps supports Azure Spring Apps that use managed components.
 
 ## What you’ll cover
 

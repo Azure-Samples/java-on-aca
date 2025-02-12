@@ -7,9 +7,9 @@ parent: 'Lab 5: Integrate Azure OpenAI Service with your apps'
 
 # Create an AI application from scratch for the Petclinic workload
 
-In this section, you’ll learn how to create an AI-enabled Java application using Azure OpenAI and Spring AI. You’ll then configure this application to answer questions about the sample Spring Petclinic Microservices application that you’ve deployed and configured in previous labs.
+In this section, you’ll learn how to create an AI-enabled Java application using Azure OpenAI and Spring AI. You’ll then configure this application to answer questions about the sample Spring Petclinic application that you’ve deployed and configured in previous labs.
 
-You’ll start by creating a new Spring Boot service application that connects with your Azure OpenAI instance. Then you'll use this application to implement a simple chatbot that takes advantage of the Azure OpenAI GPT-4o model, learning how to seamlessly integrate AI into your existing Spring Petclinic Microservices application as you go.
+You’ll start by creating a new Spring Boot service application that connects with your Azure OpenAI instance. Then you'll use this application to implement a simple chatbot that takes advantage of the Azure OpenAI GPT-4o model, learning how to seamlessly integrate AI into your existing Spring Petclinic application as you go.
 
 ## Prerequisites:
 
@@ -32,7 +32,7 @@ Your first step in this process is to create a new Spring Boot application:
     - **Lombok** (`lombok`). A Java annotation library, which helps to reduce boilerplate code.
     - **Azure OpenAI** (`spring-ai-azure-openai`). Spring AI support for Azure OpenAI.
 
-    You’ll also need to provide additional settings, such as project type, Java code details, and naming to match the structure of the existing Spring Petclinic Microservices application.
+    You’ll also need to provide additional settings, such as project type, Java code details, and naming to match the structure of the existing Spring Petclinic application.
 
     To create the new Spring Boot  application using these settings, in your command-line window, go to the `src` folder of your local code repo and run the following command:
 
@@ -146,7 +146,7 @@ Now that your project is updated with the Copilot-generated code, you’re ready
 
 ### Deploy your new `chat-service` to your Container Apps environment
 
-With your `chat-service` app built and working, you’re ready to deploy it to your Container Apps environment alongside the other components of the Spring Petclinic Microservices application.
+With your `chat-service` app built and working, you’re ready to deploy it to your Container Apps environment alongside the other components of the Spring Petclinic application.
 
 1.  In your command-line environment, run the following command to deploy the app:
 
