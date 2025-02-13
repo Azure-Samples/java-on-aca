@@ -4,6 +4,7 @@ layout: default
 parent: 'More topics'
 nav_order: 10
 has_children: true
+search_exclude: true
 ---
 
 # Deploy to Azure automatically

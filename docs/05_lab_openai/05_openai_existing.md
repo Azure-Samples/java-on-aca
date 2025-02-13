@@ -3,6 +3,7 @@ title: 'Integrate AI to existing project'
 layout: default
 nav_order: 4
 nav_exclude: true
+search_exclude: true
 parent: 'Lab 5: Integrate with Azure OpenAI'
 ---
 

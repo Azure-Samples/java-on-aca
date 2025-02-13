@@ -4,6 +4,7 @@ layout: default
 parent: 'More topics'
 nav_order: 12
 has_children: true
+search_exclude: true
 ---
 
 # Build reliable Java application on Azure Container Apps

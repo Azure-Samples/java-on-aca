@@ -4,6 +4,7 @@ layout: default
 nav_order: 13
 nav_exclude: true
 has_children: true
+search_exclude: true
 ---
 
 # Set up autoscaling for microservices

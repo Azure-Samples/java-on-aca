@@ -4,6 +4,7 @@ layout: home
 nav_order: 95
 nav_exclude: true
 has_children: true
+search_exclude: true
 ---
 
 # More topics
