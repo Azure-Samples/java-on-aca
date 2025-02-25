@@ -1,11 +1,11 @@
 ---
-title: 'Lab 3: Enable monitoring'
+title: 'Lab 4: Enable monitoring (Optional)'
 layout: default
-nav_order: 5
+nav_order: 7
 has_children: true
 ---
 
-# Lab 03: Enable monitoring and end-to-end event tracing
+# Lab 04: Enable monitoring and end-to-end event tracing (Optional)
 
 ## Introduction
 
@@ -25,7 +25,7 @@ As you work through this lab, you’ll learn how to:
 
 The following image shows how your application’s architecture should look once you complete this lab.
 
-![lab 3 overview](../../images/acalab3.png)
+![lab 4 overview](../../images/acalab3.png)
 
 ## Duration
 

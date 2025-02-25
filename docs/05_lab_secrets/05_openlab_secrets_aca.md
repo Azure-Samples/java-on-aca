@@ -1,11 +1,11 @@
 ---
-title: 'Lab 4: Connect to a database with managed identity'
+title: 'Lab 5: Connect to a database with managed identity (Optional)'
 layout: default
-nav_order: 6
+nav_order: 8
 has_children: true
 ---
 
-# Lab 04: Connect to a database securely by using managed identity
+# Lab 05: Connect to a database securely by using managed identity (Optional)
 
 ## Introduction
 
@@ -25,7 +25,7 @@ As you work through this lab, you’ll learn how to:
 
 The following diagram illustrates how your application’s architecture should look after you’ve completed this lab.
 
-![lab 4 overview](../../images/acalab4.png)
+![lab 5 overview](../../images/acalab4.png)
 
 ## Duration
 

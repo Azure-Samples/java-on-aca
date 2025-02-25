@@ -1,11 +1,11 @@
 ---
-title: 'Lab 5: Integrate Azure OpenAI Service with your apps'
+title: 'Lab 3: Integrate Azure OpenAI Service with your apps'
 layout: default
 nav_order: 7
 has_children: true
 ---
 
-# Lab 5: Integrate Azure OpenAI Service with your applications
+# Lab 03: Integrate Azure OpenAI Service with your applications
 
 ## Introduction
 
