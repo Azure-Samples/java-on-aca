@@ -37,7 +37,8 @@ To run this lab, you’ll need:
 2.  This lab also uses [Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/azure/mysql/flexible-server/overview). Before deploying or selecting a region, be sure to [verify the service is available](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/overview#azure-regions) in that region.
 
     {: .note }
-    > At the time of publishing (January 2025), we recommend using any of the following regions to help ensure that required features are available: **West US**, **West US 2**, **East US 2**, **North Central US**, **Sweden Central**.
+    > - At the time of publishing (January 2025), we recommend using any of the following regions to help ensure that required features are available: **East Asia**, **Australia East**, **Brazil South**, **South India**, **Japan East**, **Sweden Central**, **East US 2** and **West US**.
+    > - If you encounter some SKU issues or quota issues on creating some resources, feel free to create the resource in another region.
 
 ### Installation
 
