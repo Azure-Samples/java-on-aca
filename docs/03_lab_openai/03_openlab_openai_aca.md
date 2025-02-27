@@ -22,7 +22,7 @@ As you work through this lab, you’ll learn how to:
 
 The following image illustrates how your application’s architecture should look after you’ve completed this lab.
 
-![lab 5 overview](../../images/acalab5.png)
+![lab 3 overview](../../images/acalab-openai.png)
 
 ## Duration
 

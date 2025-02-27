@@ -25,7 +25,7 @@ As you work through this lab, you’ll learn how to:
 
 The following image shows how your application’s architecture should look once you complete this lab.
 
-![lab 4 overview](../../images/acalab3.png)
+![lab 4 overview](../../images/acalab-monitor.png)
 
 ## Duration
 

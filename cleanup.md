@@ -11,7 +11,7 @@ If you're finished with the resources that you created for these labs, clean up 
 
 1. Clean up the Azure OpenAI Service instance (optional). 
 
-   If you completed the optional [Lab 5]({% link docs/03_lab_openai/03_openlab_openai_aca.md %}), you created a new Azure OpenAI instance. Use the following command to delete it before you delete any other resources. If you didn't complete Lab 5, you can ignore this step.
+   If you completed the optional [Lab 3]({% link docs/03_lab_openai/03_openlab_openai_aca.md %}), you created a new Azure OpenAI instance. Use the following command to delete it before you delete any other resources. If you didn't complete Lab 3, you can ignore this step.
 
      ```bash
      az cognitiveservices account delete -g $RESOURCE_GROUP -n $OPEN_AI_SERVICE_NAME
