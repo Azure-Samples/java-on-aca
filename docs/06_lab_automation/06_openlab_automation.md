@@ -44,9 +44,10 @@ During this lab, you will:
 - This version of azd templates includes most operations in:
 
   - [Lab 2: Launch a Spring Apps microservices application to Azure Container Apps]({% link docs/02_lab_launch/02_openlab_setup_aca.md %})
-  - [Lab 3: Enable monitoring and end-to-end tracing]({% link docs/03_lab_monitor/03_openlab_monitoring_aca.md %})
-  - [Lab 4: Connect to Database securely using identity]({% link docs/04_lab_secrets/04_openlab_secrets_aca.md %})
-  - [Lab 5: Integrate with Azure OpenAI]({% link docs/05_lab_openai/05_openlab_openai_aca.md %})
+  - [Lab 3: Integrate with Azure OpenAI]({% link docs/03_lab_openai/03_openlab_openai_aca.md %})
+  - [(Optional) Lab 4: Enable monitoring and end-to-end tracing]({% link docs/04_lab_monitor/04_openlab_monitoring_aca.md %})
+  - [(Optional) Lab 5: Connect to Database securely using identity]({% link docs/05_lab_secrets/05_openlab_secrets_aca.md %})
+  
 
 - By default, the automation process will create MySQL server admin password with random string, you can reset the admin password in either way:
 

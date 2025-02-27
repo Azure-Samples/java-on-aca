@@ -2,7 +2,7 @@
 title: '2. Create AI application from scratch'
 layout: default
 nav_order: 3
-parent: 'Lab 5: Integrate Azure OpenAI Service with your apps'
+parent: 'Lab 3: Integrate Azure OpenAI Service with your apps'
 ---
 
 # Create an AI application from scratch for the Petclinic workload
@@ -15,7 +15,7 @@ You’ll start by creating a new Spring Boot service application that connects w
 
 -   A GitHub Copilot subscription. (If you don’t already have a subscription, try [GitHub Copilot Free](https://docs.github.com/en/copilot/quickstart#sign-up-for-github-copilot).)
 -   The [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) installed in your copy of Visual Studio Code.
--   A prepared Azure OpenAI instance with the `gpt-4o` model deployed. For more details, refer to the instructions [in previous section of this lab]({% link docs/05_lab_openai/0501.md %}).
+-   A prepared Azure OpenAI instance with the `gpt-4o` model deployed. For more details, refer to the instructions [in previous section of this lab]({% link docs/03_lab_openai/0301.md %}).
 -   The `endpoint` and `api-key` values for your Azure OpenAI instance. You can find these by going to your Azure OpenAI instance in the Azure portal and looking in the `Resource Management` \> `Keys and Endpoint` section.
 
 ## Step by step guidance
