@@ -138,24 +138,6 @@ Your workstation should have the following components installed:
     > To install the JDK on Windows, follow the instructions provided in the [JDK Installation Guide](https://learn.microsoft.com/java/openjdk/install#install-on-windows). Make sure to use the *FeatureJavaHome* feature during the install to update the *JAVA_HOME* environment variable.
 
 - Install [Azure CLI version 2.60.0 or later](https://learn.microsoft.com/cli/azure/install-azure-cli-linux?pivots=apt#install-azure-cli).
-- Install the Azure CLI Container Apps and Service Connector extensions.
-
-   Install the CLI extensions:
-
-   ```bash
-   az extension add --name containerapp --upgrade --allow-preview true
-   az extension add --name serviceconnector-passwordless --upgrade
-   ```
-
-   Register the namespaces:
-
-   ```bash
-   az provider register --namespace Microsoft.App
-   az provider register --namespace Microsoft.OperationalInsights
-   ```
-
-    {: .note }
-    > If needed, upgrade the Azure CLI version by launching Command Prompt as administrator and running *az upgrade*.
 
 After all these tools are installed, you can get started:
 
