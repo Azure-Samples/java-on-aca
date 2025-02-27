@@ -12,8 +12,8 @@ param environmentName string
   'brazilsouth'
   'eastus2'
   'japaneast'
-  'swedencentral'
   'southindia'
+  'swedencentral'
   'westus'
 ])
 param location string
