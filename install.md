@@ -26,9 +26,6 @@ As soon as you've set up your dev environment, you'll need to run a preparation 
 - [Preparing your subscription](#preparing-your-subscription)
 
 
-
-
-
 ## Use GitHub Codespaces (strongly recommended)
 
 The [GitHub repository for this lab](https://github.com/Azure-Samples/java-on-aca) contains a devcontainer.json file configured for Java development. If your account is enabled for [GitHub Codespaces](https://github.com/features/codespaces), you can use this file to create a cloud development environment that contains all of the tools you’ll need to complete this lab.
@@ -217,7 +214,7 @@ We'll be using Bash commands to complete this lab. You can use any compatible co
     az account set --subscription <subscription-id>
     ```
 
-1.  In your command line windows, go to the root of the `java-on-aca` folder and run the script `./tools/prepare.sh` to create the base Azure resources we'll be using as we work through the labs. 
+1.  In your command line windows, go to the root of the `java-on-aca` folder and run the script `./tools/prepare.sh`. This will create the base Azure resources you'll use as you work through the labs. 
 
     ```bash
     ./tools/prepare.sh
