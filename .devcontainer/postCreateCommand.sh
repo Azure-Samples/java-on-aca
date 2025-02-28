@@ -11,6 +11,8 @@ if [[ $? -ne 0 ]]; then
 JAVA_AI_FUNC="$DIR"
 [ -f "\$JAVA_AI_FUNC/funcs.sh" ] && \. "\$JAVA_AI_FUNC/funcs.sh"
 
+loadenv
+
 EOT
 
 fi
