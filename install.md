@@ -10,15 +10,26 @@ nav_order: 2
 
 Before you begin working through the lab, you’ll need to make sure that you have all the required tools installed and configured in your development environment. Additionally, in this same environment, before you start the process of deploying to Azure, you’ll need to have cloned a copy of the example Spring Petclinic workload code from the GitHub repo.
 
-There are three options for setting up your development environment. Choose *only one* of the following:
+There are three options for setting up your development environment. You'll want to choose *only one* of the following:
 
-- TOC
-{:toc}
+- [Use GitHub Codespaces (strongly recommended)](#use-github-codespaces-strongly-recommended)
+- [Use Visual Studio Code with remote containers](#use-visual-studio-code-with-remote-containers)
+- [Install all the tools on your local machine (not recommended)](#install-all-the-tools-on-your-local-machine-not-recommended)
+
+These dev environment setup tasks can take several minutes to complete, so we suggest starting this process as soon as possible. 
 
 {: .important }
-> We’ve tested all the steps of this lab in [GitHub Codespaces](#use-github-codespaces), which is the simplest way to get going and the preferred option for running the lab.
+> We’ve tested all the steps of this lab in [GitHub Codespaces](#use-github-codespaces), which is the simplest way to get going and the preferred option for running the lab. Support for the alternative options during the lab may be limited. Use a Codespace if at all possible. 
 
-## Use GitHub Codespaces
+As soon as you've set up your dev environment, you'll need to run a preparation script. This will save us time by performing some required configuration on your subscription and automating many of the Azure resources you'll use as part of the labs.
+
+- [Preparing your subscription](#preparing-your-subscription)
+
+
+
+
+
+## Use GitHub Codespaces (strongly recommended)
 
 The [GitHub repository for this lab](https://github.com/Azure-Samples/java-on-aca) contains a devcontainer.json file configured for Java development. If your account is enabled for [GitHub Codespaces](https://github.com/features/codespaces), you can use this file to create a cloud development environment that contains all of the tools you’ll need to complete this lab.
 
@@ -37,7 +48,7 @@ To proceed with this option:
 1.  Select **Code** and then select **Codespaces**.
 1.  Select **Create a codespace**.
 
-The codespace creation status is displayed in your browser window. After the creation process is complete, you can start using the codespace dev environment to execute the next steps in the lab.
+The codespace creation status is displayed in your browser window, and may take around 10 minutes to complete. After the creation process is complete, you can start using the codespace dev environment to execute the next steps in the lab.
 
 ## Use Visual Studio Code with remote containers
 
@@ -100,7 +111,7 @@ To get started working in the dev container:
 
 After you have the Docker container open, you can start executing the rest of the lab.
 
-## Install all the tools on your local machine
+## Install all the tools on your local machine (not recommended)
 
 If you’re unable to use either GitHub Codespaces or the Visual Studio Code Dev Containers extension, you can configure your local workstation as your development environment. To do so, you must install all the Java and Azure tools that you need to use in this lab.
 
@@ -165,3 +176,60 @@ After all these tools are installed, you can get started:
     cd java-on-aca
     code .
     ```
+
+## Preparing your subscription
+
+With your development environment set up, you'll need to run a preparation script we've created that will save performing some required configuration on your subscription and automate many of the Azure resources you'll use as part of the labs, including the following:
+
+- [Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/azure/mysql/flexible-server/overview)
+- [Azure Container Registry](https://learn.microsoft.com/azure/container-registry/container-registry-intro)
+- [Azure OpenAI Service](https://learn.microsoft.com/azure/ai-services/openai/)
+- [Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-workspace-overview)
+- [Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)
+- [Azure Managed Grafana](https://learn.microsoft.com/azure/managed-grafana/)
+
+The first thing you'll need to do is sign your lab environment in to Azure and configure it to access the lab subscription.
+
+{: .note }
+We'll be using Bash commands to complete this lab. You can use any compatible command-line environment, such as the Windows Subsystem for Linux, Git Bash, or the Visual Studio Code Bash terminal. To avoid potential errors, **do not** run these commands in a PowerShell session.
+
+
+1.  In your lab environment, open a command-line environment and sign in to your Azure subscription with the following command:
+
+    ```bash
+    az login
+    ```
+
+    {: .note }
+    > If you’re running this lab in GitHub Codespaces, use az login --use-device-code.
+
+    When you execute the command, it automatically opens a web browser window and requires that you authenticate. When prompted, sign in with the user account (with the Owner role) in the Azure subscription that you have for this lab and then close the browser window.
+
+1.  Make sure that you’re signed in to the lab subscription:
+
+    ```bash
+    az account list -o table
+    ```
+
+    If you don't see the correct lab account listed as your default one, use the following command to adjust your Azure CLI session to use the correct subscription (replace \<*subscription-id*\> with the lab subscription’s ID):
+
+    ```bash
+    az account set --subscription <subscription-id>
+    ```
+
+1.  In your command line windows, go to the root of the `java-on-aca` folder and run the script `./tools/prepare.sh` to create the base Azure resources we'll be using as we work through the labs. 
+
+    ```bash
+    ./tools/prepare.sh
+    ```
+
+    This process will take 10-20 minutes to complete.
+
+{: .important }
+> The actions you just performed are fundamental to the labs you’ll be working through, so please do not delete any of the Azure resources you've created here until you've completely finished all labs.
+>
+>In addition to those resources, you also defined some environment variables to store your subscription information, and you'll also make extensive use of other environment variables as you work through these labs. To make sure you don't lose these variables after closing your current bash session, you'll want to save them.
+>
+> Before you move forward, in your open command-line window, go to the  `spring-petclinic-microservices` directory and run the command `source ../.devcontainer/saveenv.sh`. This will save the environment variables to the file `~/.dev-environment`, and any new bash sessions you start will automatically load the required variables.
+>
+> You can also manually load the saved variables with the command `source ~/.dev-environment`.

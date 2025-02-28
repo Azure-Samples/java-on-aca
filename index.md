@@ -38,16 +38,18 @@ To run this lab, you’ll need:
 
     {: .note }
     > - At the time of publishing (January 2025), we recommend using any of the following regions to help ensure that required features are available: **East Asia**, **Australia East**, **Brazil South**, **South India**, **Japan East**, **Sweden Central**, **East US 2** and **West US**.
-    > - If you encounter some SKU issues or quota issues on creating some resources, feel free to create the resource in another region.
+    > - If you encounter SKU or quota issues when attempting to create resources during any of these labs, feel free to create the resource in another one of these recommended regions.
 
 ### Installation
 
 Before running this lab, be sure that all the required tooling is available. We’ve provided three options:
 
-* [Use GitHub Codespaces (preferred)]({% link install.md %}#using-a-github-codespace), which will create a cloud-based development environment with the required tools installed and configured.
+* [Use GitHub Codespaces (preferred)]({% link install.md %}#use-github-codespaces-strongly-recommended), which will create a cloud-based development environment with the required tools installed and configured.
 * [Use Visual Studio Code with remote containers option]({% link install.md %}#using-visual-studio-code-with-remote-containers), which will create a Docker container on your local machine with the required tools preconfigured.
-* [Install all the tools on your local machine]({% link install.md %}#install-all-the-tools-on-your-local-machine).
+* [Install all the tools on your local machine]({% link install.md %}#install-all-the-tools-on-your-local-machine-not-recommended).
 
-We’ve tested this lab using GitHub Codespaces, which is the preferred option for running it.
+We’ve tested this lab using GitHub Codespaces, which is the recommended option for running it.
+
+After the tooling is set up, you'll need to perform some steps to [prepare your subscription]({% link install.md %}#preparing-your-subscription) before continuing with the labs.
 
 You can find the full installation guidance and the options for running this lab in the [Installation]({% link install.md %}) instructions.
