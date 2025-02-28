@@ -215,12 +215,14 @@ Once you're signed in you can start running the setup scripts. The first script,
     ./tools/prepare.sh
     ```
 
-    This process should take less than 10 minutes to complete. 
+    This process should take less than 10 minutes to complete.
 
-Once the `prepare.sh` script finishes, you can proceed with creating the base Azure resource dependencies you'll use as you work through the labs. You'll do this using the script `create-azure-resource.sh`.
+Once the `prepare.sh` script finishes, close the terminal and start a new terminal to get a full ready lab environment.
+
+You can proceed with creating the base Azure resource dependencies you'll use as you work through the labs. You'll do this using the script `create-azure-resource.sh`.
 
 1.  Before running the script, you'll need to edit the file `./tools/azure-resource.profile` in a code editor and update the following values:
-    
+
     - `UNIQUEID` - Create a unique ID string and paste that in the code editor. You can use the following command generate an acceptable value: `openssl rand -hex 3`
     - `SUBSCRIPTION` - Enter the ID of the subscription you're going to work in. To quickly find this id, use the following command: `az account show --query id`
     - `REGION` -  Enter the default Azure region you want to work in. For example `westus` or `southindia`.
@@ -247,7 +249,6 @@ Once the `prepare.sh` script finishes, you can proceed with creating the base Az
 
     While you'll need this script to finish before you can start Lab 2, feel free to start Lab 1 while you wait. 
 
-
 {: .important }
 > The actions you just performed are fundamental, so please do not delete any of the resources you've created here until you've completely finished all labs.
 >
@@ -255,6 +256,6 @@ Once the `prepare.sh` script finishes, you can proceed with creating the base Az
 >
 > Before you do anything else, run the command `saveenv` in your open command-line window. This will save all of your currently defined environment variables to the file `~/.dev-environment`. The next time you start a new bash session you will automatically load the saved variables from this file.
 >
-> You can also manually load the saved variables with the command `loadenv`. 
-> 
-> You can use these commands at any time, so feel free to run `saveenv` after creating or updating environment variables when working through the labs, or `loadenv` to reload your saved variables as needed. 
+> You can also manually load the saved variables with the command `loadenv`.
+>
+> You can use these commands at any time, so feel free to run `saveenv` after creating or updating environment variables when working through the labs, or `loadenv` to reload your saved variables as needed.
