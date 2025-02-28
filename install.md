@@ -215,7 +215,7 @@ Once you're signed in you can start running the setup scripts. The first script,
     ./tools/prepare.sh
     ```
 
-    This process should take less than 10 minutes to complete.
+    This process should take less than 10 minutes to complete. 
 
 Once the `prepare.sh` script finishes, close the terminal and start a new terminal to get a full ready lab environment.
 
@@ -249,6 +249,7 @@ You can proceed with creating the base Azure resource dependencies you'll use as
 
     While you'll need this script to finish before you can start Lab 2, feel free to start Lab 1 while you wait. 
 
+
 {: .important }
 > The actions you just performed are fundamental, so please do not delete any of the resources you've created here until you've completely finished all labs.
 >
@@ -256,6 +257,6 @@ You can proceed with creating the base Azure resource dependencies you'll use as
 >
 > Before you do anything else, run the command `saveenv` in your open command-line window. This will save all of your currently defined environment variables to the file `~/.dev-environment`. The next time you start a new bash session you will automatically load the saved variables from this file.
 >
-> You can also manually load the saved variables with the command `loadenv`.
->
-> You can use these commands at any time, so feel free to run `saveenv` after creating or updating environment variables when working through the labs, or `loadenv` to reload your saved variables as needed.
+> You can also manually load the saved variables with the command `loadenv`. 
+> 
+> You can use these commands at any time, so feel free to run `saveenv` after creating or updating environment variables when working through the labs, or `loadenv` to reload your saved variables as needed. 
