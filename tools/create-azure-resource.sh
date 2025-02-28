@@ -136,3 +136,7 @@ else
         --parameters grafanaName=$GRAFANA_NAME location=$GRAFANA_LOCATION \
         --output table
 fi
+
+# Save environment variables
+
+saveenv

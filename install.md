@@ -217,10 +217,12 @@ Once you're signed in you can start running the setup scripts. The first script,
 
     This process should take less than 10 minutes to complete. 
 
-Once the `prepare.sh` script finishes, you can proceed with creating the base Azure resource dependencies you'll use as you work through the labs. You'll do this using the script `create-azure-resource.sh`.
+Once the `prepare.sh` script finishes, close the terminal and start a new terminal to get a full ready lab environment.
+
+You can proceed with creating the base Azure resource dependencies you'll use as you work through the labs. You'll do this using the script `create-azure-resource.sh`.
 
 1.  Before running the script, you'll need to edit the file `./tools/azure-resource.profile` in a code editor and update the following values:
-    
+
     - `UNIQUEID` - Create a unique ID string and paste that in the code editor. You can use the following command generate an acceptable value: `openssl rand -hex 3`
     - `SUBSCRIPTION` - Enter the ID of the subscription you're going to work in. To quickly find this id, use the following command: `az account show --query id`
     - `REGION` -  Enter the default Azure region you want to work in. For example `westus` or `southindia`.
