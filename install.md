@@ -176,11 +176,13 @@ After all these tools are installed, you can get started:
 
 ## Preparing your subscription
 
-With your development environment set up, you're now going to run a couple scripts to perform some setup tasks on you lab subscription and then automate the deployment of some required Azure resources that you'll use during the labs. 
+With your development environment set up, you're now going to use some scripts to perform some subscription configuration and also deploy some Azure resources that you'll use during the labs. 
 
 
 {: .note }
 We'll be using Bash commands to complete this lab. You can use any compatible command-line environment, such as the Windows Subsystem for Linux, Git Bash, or the Visual Studio Code Bash terminal. To avoid potential errors, **do not** attempt to run these commands in a PowerShell session.
+
+### Sign into Azure
 
 Before you run the scripts, you'll need to sign in to Azure and configure it to access your lab subscription.
 
@@ -207,7 +209,9 @@ Before you run the scripts, you'll need to sign in to Azure and configure it to 
     az account set --subscription <subscription-id>
     ```
 
-Once you're signed in you can start running the setup scripts. The first script, `prepare.sh`, will register the required resources providers, and add any necessary extensions to Azure CLI.
+### Run the subscription preparation script
+
+Now you'll run the script `prepare.sh` to register the required resources providers on your lab subscription, and also add any necessary extensions to the Azure CLI.
 
 1.  In your command line windows, go to the root of the `java-on-aca` folder and run the script `./tools/prepare.sh`.
 
@@ -217,9 +221,11 @@ Once you're signed in you can start running the setup scripts. The first script,
 
     This process should take less than 10 minutes to complete. 
 
-Once the `prepare.sh` script finishes, close the terminal and start a new terminal to get a full ready lab environment.
+1. Once the `prepare.sh` script finishes, close your current terminal window and start a new terminal session to access your fully prepared lab environment.
 
-You can proceed with creating the base Azure resource dependencies you'll use as you work through the labs. You'll do this using the script `create-azure-resource.sh`.
+### Run the resource creation script
+
+You'll now need to run the script `create-azure-resource.sh`, which will create several of the Azure resource dependencies that you'll use in the labs.
 
 1.  Before running the script, you'll need to edit the file `./tools/azure-resource.profile` in a code editor and update the following values:
 
