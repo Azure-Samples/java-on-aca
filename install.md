@@ -12,7 +12,7 @@ nav_order: 2
 Before you begin working through the lab, you’ll need to make sure that you have all the required tools installed and configured in your development environment, and that your Azure subscription is ready for the labs. Please complete the following steps before proceeding:
 
 1. **[Set up your development environment using GitHub Codespaces](#use-github-codespaces-strongly-recommended).** This will give you a fully configured development environment without requiring any software installation or configuration on your local workstation. This environment will also contain a cloned copy of the example Spring Petclinic workload code from the GitHub repo. 
-2. **[Configure your subscription and deploy prerequisite Azure resources](#configure-your-subscription-and-deploy-pre-requisite-azure-resources).** Once you've set up your dev environment, you'll need to run a couple scripts that will automate some required subscription configuration and resources deployment tasks.
+2. **[Configure your subscription and deploy prerequisite Azure resources](#configure-your-subscription-and-deploy-prerequisite-azure-resources).** Once you've set up your dev environment, you'll need to run a couple scripts that will automate some required subscription configuration and resources deployment tasks.
 
 These setup tasks can take several minutes to complete, so we suggest starting this process as soon as possible. 
 
@@ -48,7 +48,7 @@ To proceed with this option:
 
 The codespace creation status is displayed in your browser window, and may take around 10 minutes to complete. After the creation process is complete, you can start using the codespace dev environment to execute the next steps in the lab.
 
-## Configure your subscription and deploy pre-requisite Azure resources
+## Configure your subscription and deploy prerequisite Azure resources
 
 Once you've got your development environment set up, you're going need to make some configuration changes to your subscription. You'll also need to deploy some of the required Azure resources you'll be using in the labs. To save time, and get you working through the lab contents as soon as possible, you'll now run a couple of scripts to automate these tasks.
 

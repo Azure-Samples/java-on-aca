@@ -50,6 +50,6 @@ Before running this lab, be sure that all the required tooling is available. Weâ
 
 Weâ€™ve tested this lab using GitHub Codespaces, which is the recommended option for running it.
 
-After the tooling is set up, you'll need to perform some steps to [prepare your subscription]({% link install.md %}#configure-your-subscription-and-deploy-pre-requisite-azure-resources) before continuing with the labs.
+After the tooling is set up, you'll need to perform some steps to [prepare your subscription]({% link install.md %}#configure-your-subscription-and-deploy-prerequisite-azure-resources) before continuing with the labs.
 
 You can find the full installation guidance and the options for running this lab in the [Installation]({% link install.md %}) instructions.
