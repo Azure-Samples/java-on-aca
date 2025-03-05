@@ -45,8 +45,8 @@ To run this lab, you’ll need:
 Before running this lab, be sure that all the required tooling is available. We’ve provided three options:
 
 * [Use GitHub Codespaces (preferred)]({% link install.md %}#use-github-codespaces-strongly-recommended), which will create a cloud-based development environment with the required tools installed and configured.
-* [Use Visual Studio Code with remote containers option]({% link install.md %}#using-visual-studio-code-with-remote-containers), which will create a Docker container on your local machine with the required tools preconfigured.
-* [Install all the tools on your local machine]({% link install.md %}#install-all-the-tools-on-your-local-machine-not-recommended).
+* [Use Visual Studio Code with remote containers option]({% link install.md %}#optional-use-visual-studio-code-with-remote-containers), which will create a Docker container on your local machine with the required tools preconfigured.
+* [Install all the tools on your local machine]({% link install.md %}#optional-install-all-the-tools-on-your-local-machine-not-recommended).
 
 We’ve tested this lab using GitHub Codespaces, which is the recommended option for running it.
 

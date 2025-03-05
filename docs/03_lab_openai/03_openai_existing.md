@@ -281,18 +281,22 @@ Start from a simple spring boot application, we will add AI components to the pr
 
 # (Optional) Integrate the chat client into api-gateway
 
+<details markdown="1">
+
+<summary><b><a>Click here to view the contents of this optional section.</a></b></summary>
+
 1. Update service `api-gateway` to add a new chat window.
 
    - Add new route entry for `chat-service`. Note this name will be used later. Open file `spring-petclinic-api-gateway/src/main/resources/application.yml` and append new entry like below:
 
-    ```yml
-           - id: chat-service
-             uri: lb://chat-service
-             predicates:
+   ```yml
+         - id: chat-service
+            uri: lb://chat-service
+            predicates:
                - Path=/api/chat/**
-             filters:
+            filters:
                - StripPrefix=2
-     ```
+   ```
 
    - Add chatbox for api gateway
 
@@ -306,16 +310,16 @@ Start from a simple spring boot application, we will add AI components to the pr
    APP_NAME=api-gateway
    mvn clean package -DskipTests -pl spring-petclinic-$APP_NAME
    az containerapp update --name $APP_NAME --resource-group $RESOURCE_GROUP \
-       --source ./spring-petclinic-$APP_NAME
+      --source ./spring-petclinic-$APP_NAME
    ```
 
    - Check the new chatbox in the petclinic page.
 
    ```bash
    api_gateway_FQDN=$(az containerapp show \
-     --resource-group $RESOURCE_GROUP \
-     --name $APP_NAME \
-     --query properties.configuration.ingress.fqdn \
+   --resource-group $RESOURCE_GROUP \
+   --name $APP_NAME \
+   --query properties.configuration.ingress.fqdn \
       -o tsv)
 
    echo https://$api_gateway_FQDN
@@ -329,7 +333,13 @@ Start from a simple spring boot application, we will add AI components to the pr
 
    ![lab 5 open-ai-rag-bot](../../images/open-ai-rag-bot.png)
 
+</details>
+
 # (Optional) Prepare the simple project
+
+<details markdown="1">
+
+<summary><b><a>Click here to view the contents of this optional section.</a></b></summary>
 
 1. Create a project from [spring initializr](https://start.spring.io/):
 
@@ -365,3 +375,5 @@ Start from a simple spring boot application, we will add AI components to the pr
 1. Enable Eureka Client in class `ChatServiceApplication`:
 
    ![lab 5 eureka client](../../images/open-ai-eureka-client.png)
+
+</details>

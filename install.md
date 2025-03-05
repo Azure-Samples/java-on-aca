@@ -13,8 +13,8 @@ Before you begin working through the lab, you’ll need to make sure that you ha
 There are three options for setting up your development environment. You'll want to choose *only one* of the following:
 
 - [Use GitHub Codespaces (strongly recommended)](#use-github-codespaces-strongly-recommended)
-- [Use Visual Studio Code with remote containers](#use-visual-studio-code-with-remote-containers)
-- [Install all the tools on your local machine (not recommended)](#install-all-the-tools-on-your-local-machine-not-recommended)
+- [Use Visual Studio Code with remote containers](#optional-use-visual-studio-code-with-remote-containers)
+- [Install all the tools on your local machine (not recommended)](#optional-install-all-the-tools-on-your-local-machine-not-recommended)
 
 These dev environment setup tasks can take several minutes to complete, so we suggest starting this process as soon as possible. 
 
@@ -47,11 +47,15 @@ To proceed with this option:
 
 The codespace creation status is displayed in your browser window, and may take around 10 minutes to complete. After the creation process is complete, you can start using the codespace dev environment to execute the next steps in the lab.
 
-## Use Visual Studio Code with remote containers
+## (Optional) Use Visual Studio Code with remote containers
 
-The [git repository of this lab](https://github.com/Azure-Samples/java-on-aca) includes a dev container for Java development, which has all the needed tools for running this lab. For this option, you need the following tools to be installed on your local workstation.
+If you're unable to use a Codespace, the next best solution is to use Docker and the [Visual Studio Code Dev Containers extension](https://code.visualstudio.com/docs/remote/containers) to deploy a preconfigured dev container on your local workstation. Using the same devcontainer.json file in the [Git repository of this lab](https://github.com/Azure-Samples/java-on-aca) noted in the GitHub Codespaces option, you can easily configure a Java development container that has all the tools you need to run this lab.
 
-Alternatively, you can use Docker and the [Visual Studio Code Dev Containers extension](https://code.visualstudio.com/docs/remote/containers) to deploy a preconfigured dev container on your local workstation. Using the same devcontainer.json file in the [Git repository of this lab](https://github.com/Azure-Samples/java-on-aca) noted in the GitHub Codespaces option, you can easily configure a Java development container that has all the tools you need to run this lab.
+<details markdown="1">
+
+<summary><b><a>Click here for instructions on how to use Visual Studio Code with remote containers</a></b></summary>
+    
+The [git repository of this lab](https://github.com/Azure-Samples/java-on-aca) includes a dev container for Java development. This container has all the tools you need to run this lab. 
 
 This type of containerized approach allows you to quickly deploy a ready-to-use development environment. However, unlike with the GitHub Codespaces option, you need to perform the following tasks to get this working on your local workstation:
 
@@ -108,12 +112,18 @@ To get started working in the dev container:
 
 After you have the Docker container open, you can start executing the rest of the lab.
 
-## Install all the tools on your local machine (not recommended)
+</details>
+
+## (Optional) Install all the tools on your local machine (not recommended)
 
 If you’re unable to use either GitHub Codespaces or the Visual Studio Code Dev Containers extension, you can configure your local workstation as your development environment. To do so, you must install all the Java and Azure tools that you need to use in this lab.
 
 {: .note }
 > Only use this option if you feel comfortable installing a lot of tooling on your local workstation. Also note that it’s impossible for us to test all lab steps with all possible local configurations. We highly recommend using either the GitHub Codespaces or the Visual Studio Code Dev Containers option for running this lab.
+
+<details markdown="1">
+
+<summary><b><a>Click here for instructions on how to user install the required tools locally.</a></b></summary>
 
 {: .note }
 > The following guidance assumes that you’re using a Windows workstation. If your workstation is running an alternative operating system, you’ll likely need to adjust the instructions to be sure that all components are properly installed on your machine. Again, only proceed with this option if you’re comfortable configuring a Java development environment on your operating system.
@@ -173,6 +183,7 @@ After all these tools are installed, you can get started:
     cd java-on-aca
     code .
     ```
+</details>
 
 ## Preparing your subscription
 
