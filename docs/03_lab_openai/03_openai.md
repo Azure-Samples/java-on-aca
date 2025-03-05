@@ -57,13 +57,13 @@ Your first step in this process is to create a new Spring Boot application:
 1.  In Visual Studio Code, open the `pom.xml` file and find the `spring-ai.version` value for the project.
 
     ```xml
-    <spring-ai.version>1.0.0-M5</spring-ai.version>
+    <spring-ai.version>1.0.0-M6</spring-ai.version>
     ```
 
 1.  In your command-line window, save this version number as an environment variable for later use (modifying the version number to match the value you see in your actual `pom.xml` file).
 
     ```bash
-    SPRING_AI_VERSION=1.0.0-M5
+    SPRING_AI_VERSION=<spring-ai.version>
     ```
 
 ### Generate AI code using Github Copilot
@@ -78,7 +78,7 @@ To do this, you’ll download a version-appropriate example code file from the S
 
     ```bash
     TEST_FILE="https://raw.githubusercontent.com/spring-projects/spring-ai/refs/heads/${SPRING_AI_VERSION}/models/spring-ai-azure-openai/src/test/java/org/springframework/ai/azure/openai/AzureOpenAiChatClientIT.java"
-    wget $TEST_FILE -P spring-petclinic-chat-service/src/main/resources/
+    curl $TEST_FILE -o src/main/resources/AzureOpenAiChatClientIT.java
     ```
 
 1.  In Visual Studio Code, open the `Github Copilot Chat` window and select the `ChatServiceApplication.java` file. The file name appears in the "Ask Copilot" input box as "Current file context".
