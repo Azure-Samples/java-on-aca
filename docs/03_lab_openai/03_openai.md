@@ -78,7 +78,7 @@ To do this, you’ll download a version-appropriate example code file from the S
 
     ```bash
     TEST_FILE="https://raw.githubusercontent.com/spring-projects/spring-ai/refs/heads/${SPRING_AI_VERSION}/models/spring-ai-azure-openai/src/test/java/org/springframework/ai/azure/openai/AzureOpenAiChatClientIT.java"
-    curl $TEST_FILE -o src/main/resources/AzureOpenAiChatClientIT.java
+    curl $TEST_FILE -o spring-petclinic-chat-service/src/main/resources/AzureOpenAiChatClientIT.java
     ```
 
 1.  In Visual Studio Code, open the `Github Copilot Chat` window and select the `ChatServiceApplication.java` file. The file name appears in the "Ask Copilot" input box as "Current file context".
