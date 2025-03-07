@@ -5,7 +5,7 @@
 
 ## Features
 
-This repository supports the [Java and AI](https://azure-samples.github.io/java-on-aca/) lab series. In these labs, you'll walk through deploying the sample [Spring Petclinic](https://github.com/Azure-Samples/java-on-aca/tree/main/src) application to an [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) environment while also integrating additional Azure services, such as [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview).
+This repository supports the [Java and AI](https://azure-samples.github.io/java-on-aca/) lab series. In these labs, you'll walk through deploying the sample [Spring Petclinic](https://github.com/Azure-Samples/java-on-aca/tree/main/src) application to an [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) environment while also integrating additional Azure services, such as [Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/overview).
 
 ![main page](./images/api-gateway-main.png)
 
@@ -21,18 +21,18 @@ See the [installation guide](https://azure-samples.github.io/java-on-aca/install
 
 The application code and configuration files contained in this repo are for educational purposes, and were built specifically to showcase specific Microsoft Azure services and tools. You should not use this code in your production environments without thoroughly reviewing it and implementing or enabling additional security features.
 
-For a more comprehensive list of best practices and security recommendations for building intelligent applications on Azure, review the [Azure security best practices and patterns](https://learn.microsoft.com/en-us/azure/security/fundamentals/best-practices-and-patterns) and [Azure security baseline for Intelligent Recommendations](https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/intelligent-recommendations-security-baseline) guides.
+For a more comprehensive list of best practices and security recommendations for building intelligent applications on Azure, review the [Azure security best practices and patterns](https://learn.microsoft.com/azure/security/fundamentals/best-practices-and-patterns) and [Azure security baseline for Intelligent Recommendations](https://learn.microsoft.com/security/benchmark/azure/baselines/intelligent-recommendations-security-baseline) guides.
 
 ## Resources 
 
-   Visit Microsoft.com to learn more about how you can [build and modernize AI apps on Azure](https://azure.microsoft.com/solutions/build-modernize-intelligent-apps).
+   Learn more about how you can [build and modernize AI apps on Azure](https://azure.microsoft.com/solutions/build-modernize-intelligent-apps).
    
-   You can also get more information about best practices and security recommendations for building intelligent applications on Azure: 
+   You can also reference the following guides for more information about best practices and security recommendations for building intelligent applications on Azure: 
    
    - [Azure security best practices and patterns](https://learn.microsoft.com/azure/security/fundamentals/best-practices-and-patterns)
-   - [Azure security baseline for Intelligent Recommendations](https://learn.microsoft.com/security/benchmark/azure/baselines/intelligent-recommendations-security-baseline) guides.
+   - [Azure security baseline for Intelligent Recommendations](https://learn.microsoft.com/security/benchmark/azure/baselines/intelligent-recommendations-security-baseline)
 
-   To learn more about the specific Microsoft products and services we use in these labs, see the following links:
+   For more information about the specific Microsoft products, services, and technologies we use in these labs, see the following links:
 
    - [Java on Azure](https://azure.microsoft.com/resources/developers/java)
    - [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview)
