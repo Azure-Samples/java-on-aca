@@ -14,15 +14,15 @@ Tips in this section include:
 
 ## Use GitHub Codespaces
 
-As described in the [installation instructions]({% link install.md %}), the best and easiest way to run this lab is to use [GitHub Codespaces](https://github.com/features/codespaces). With the devcontainer.json file provided in the lab's [GitHub repository](https://github.com/Azure-Samples/java-on-aca) you can create a codespace that has the required tools pre-installed and configured for you. The steps in this lab have been thoroughly tested with the codespace configuration included in the repo. 
+As described in the [installation instructions]({% link install.md %}), the best and easiest way to run this lab is to use [GitHub Codespaces](https://github.com/features/codespaces). With the devcontainer.json file provided in the lab's [GitHub repository](https://github.com/Azure-Samples/java-on-aca) you can create a codespace that has the required tools pre-installed and configured for you. The steps in this lab have been thoroughly tested with the codespace configuration included in the repo.
 
-If you're unable to use a codespace, the best alternative is Visual Studio Code with remote containers, which allows you to deploy and work with a preconfigured Docker development environment. 
+If you're unable to use a codespace, the best alternative is Visual Studio Code with remote containers, which allows you to deploy and work with a preconfigured Docker development environment.
 
 If you can't use either of these options, you can complete this lab by installing the required tooling on your local environment. However, since it’s impossible for us to test all lab steps with every possible local configuration, we highly recommend using either GitHub Codespaces or the Visual Studio Code with remote containers.
 
-## Use .azcli files to make command line work easier 
+## Use .azcli files to make command line work easier
 
-If you're using Visual Studio Code, you can record the command-line statements that you execute in a file with the _.azcli_ extension. This extension, combined with the [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) extension, gives you extra capabilities, like IntelliSense, and the opportunity to directly run statements from the script file in a terminal window. 
+If you're using Visual Studio Code, you can record the command-line statements that you execute in a file with the _.azcli_ extension. This extension, combined with the [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) extension, gives you extra capabilities, like IntelliSense, and the opportunity to directly run statements from the script file in a terminal window.
 
 With this extension, you can keep a record in an .azcli file of all the steps that you executed and quickly execute these statements through the `Ctrl+` shortcut. To save time and effort in this lab, be sure to check out the extension.
 
@@ -39,7 +39,7 @@ There are a couple places in the lab where you can easily to miss steps or incor
 1.	Check the logs for the failing application or service.
 
    ```bash
-   az containerapp logs show -g $RESOURCE_GROUP -n <APP_NAME> 
+   az containerapp logs show -g $RESOURCE_GROUP -n <APP_NAME>
    ```
 
 ### Dealing with code errors

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-source ./azure-resource.profile
-source ./funcs.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+source $DIR/azure-resource.profile
+source $DIR/funcs.sh
 
 # Resource Group
 
