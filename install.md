@@ -11,10 +11,10 @@ nav_order: 2
 
 Before you begin working through the lab, you’ll need to make sure that you have all the required tools installed and configured in your development environment, and that your Azure subscription is ready for the labs. Please complete the following steps before proceeding:
 
-1. **[Set up your development environment using GitHub Codespaces](#use-github-codespaces-strongly-recommended).** This will give you a fully configured development environment without requiring any software installation or configuration on your local workstation. This environment will also contain a cloned copy of the example Spring Petclinic workload code from the GitHub repo. 
+1. **[Set up your development environment using GitHub Codespaces](#use-github-codespaces-strongly-recommended).** This will give you a fully configured development environment without requiring any software installation or configuration on your local workstation. This environment will also contain a cloned copy of the example Spring Petclinic workload code from the GitHub repo.
 2. **[Configure your subscription and deploy prerequisite Azure resources](#configure-your-subscription-and-deploy-prerequisite-azure-resources).** Once you've set up your dev environment, you'll need to run a couple scripts that will automate some required subscription configuration and resources deployment tasks.
 
-These setup tasks can take several minutes to complete, so we suggest starting this process as soon as possible. 
+These setup tasks can take several minutes to complete, so we suggest starting this process as soon as possible.
 
 ### Alternative development environment options
 
@@ -24,7 +24,7 @@ If you are unable to use a Codespace, there's two alternative ways to set up a d
 - [Install all the tools on your local machine (not recommended)](#optional-install-all-the-tools-on-your-local-machine-not-recommended)
 
 {: .important }
-> We’ve tested all the steps of this lab in [GitHub Codespaces](#use-github-codespaces), which is the simplest way to get going and the preferred option for running the lab. Support for these alternative options during the lab may be limited. Use a Codespace if at all possible. 
+> We’ve tested all the steps of this lab in [Use GitHub Codespaces](#use-github-codespaces), which is the simplest way to get going and the preferred option for running the lab. Support for these alternative options during the lab may be limited. Use a Codespace if at all possible.
 
 
 ## Use GitHub Codespaces (strongly recommended)
@@ -92,7 +92,7 @@ Now you'll run the script `prepare.sh` to register the required resources provid
     ./tools/prepare.sh
     ```
 
-    This process should take less than 10 minutes to complete. 
+    This process should take less than 10 minutes to complete.
 
 1. Once the `prepare.sh` script finishes, close your current terminal window and start a new terminal session to ensure you're accessing a fully prepared lab environment.
 
@@ -105,7 +105,7 @@ You'll now run the script `create-azure-resource.sh`, which will create several 
     - `UNIQUEID` - Create a unique ID string and paste that in the code editor. You can use the following command generate an acceptable value: `openssl rand -hex 3`
     - `SUBSCRIPTION` - Enter the ID of the subscription you're going to work in. To quickly find this id, use the following command: `az account show --query id`
     - `REGION` -  Enter the default Azure region you want to work in. For example `westus` or `southindia`.
-    - `MYSQL_ADMIN_PASSWORD` - enter a strong password string. 
+    - `MYSQL_ADMIN_PASSWORD` - enter a strong password string.
 
     After setting these values, save the updated `azure-resource.profile` file before proceeding.
 
@@ -136,9 +136,9 @@ You'll now run the script `create-azure-resource.sh`, which will create several 
 >
 > Before you do anything else, run the command `saveenv` in your open command-line window. This will save all of your currently defined environment variables to the file `~/.dev-environment`. The next time you start a new bash session you will automatically load the saved variables from this file.
 >
-> You can also manually load the saved variables with the command `loadenv`. 
-> 
-> You can use these commands at any time, so feel free to run `saveenv` after creating or updating environment variables when working through the labs, or `loadenv` to reload your saved variables as needed. 
+> You can also manually load the saved variables with the command `loadenv`.
+>
+> You can use these commands at any time, so feel free to run `saveenv` after creating or updating environment variables when working through the labs, or `loadenv` to reload your saved variables as needed.
 
 
 ## (Optional) Use Visual Studio Code with remote containers
@@ -184,7 +184,7 @@ To get started working in the dev container:
     ```bash
     mkdir workspaces
     cd workspaces
-    git clone https://github.com/\<your-github-account\>/java-on-aca.git
+    git clone https://github.com/<your-github-account>/java-on-aca.git
     ```
 
 1.  When prompted to sign in to GitHub, select **Sign in with your browser**. This will automatically open a new tab in the web browser window, prompting you to provide your GitHub username and password.
@@ -197,9 +197,8 @@ To get started working in the dev container:
 1.  Go to the java-on-aca folder where you cloned the project, and open the project with Visual Studio Code.
 
     ```bash
-    mkdir workspaces
-    cd workspaces
-    git clone https://github.com/<your-github-account>/java-on-aca.git
+    cd java-on-aca
+    code .
     ```
 
 1.  With the [Visual Studio Code Remote Containers extension](https://code.visualstudio.com/docs/remote/containers) installed, you can now open the project in a remote container. This will reopen the project in a Docker container with all the tooling installed.

@@ -34,7 +34,7 @@ Your first step in this process is to create a new Spring Boot application:
 
     You’ll also need to provide additional settings, such as project type, Java code details, and naming to match the structure of the existing Spring Petclinic application.
 
-    To create the new Spring Boot  application using these settings, in your command-line window, go to the `src` folder of your local code repo and run the following command:
+    To create the new Spring Boot  application using these settings, in your command-line window, go to the `spring-petclinic-microservices` folder of your local code repo and run the following command:
 
     ```bash
     mkdir spring-petclinic-chat-service

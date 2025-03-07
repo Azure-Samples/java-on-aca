@@ -4,7 +4,7 @@ layout: default
 nav_order: 5
 nav_exclude: true
 search_exclude: true
-parent: 'Lab 3: Integrate Azure OpenAI Service with your apps'
+parent: 'Lab 3: Integrate Azure OpenAI Service with your apps (exclude)'
 ---
 
 # Integrate AI into your existing project
