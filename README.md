@@ -25,7 +25,14 @@ For a more comprehensive list of best practices and security recommendations for
 
 ## Resources 
 
-To learn more about the Microsoft products and services you'll be using in these labs, see the following links:
+   Visit Microsoft.com to learn more about how you can [build and modernize AI apps on Azure](https://azure.microsoft.com/solutions/build-modernize-intelligent-apps).
+   
+   You can also get more information about best practices and security recommendations for building intelligent applications on Azure: 
+   
+   - [Azure security best practices and patterns](https://learn.microsoft.com/azure/security/fundamentals/best-practices-and-patterns)
+   - [Azure security baseline for Intelligent Recommendations](https://learn.microsoft.com/security/benchmark/azure/baselines/intelligent-recommendations-security-baseline) guides.
+
+   To learn more about the specific Microsoft products and services we use in these labs, see the following links:
 
    - [Java on Azure](https://azure.microsoft.com/resources/developers/java)
    - [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview)
