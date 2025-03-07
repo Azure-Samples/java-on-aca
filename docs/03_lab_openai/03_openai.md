@@ -102,7 +102,7 @@ To do this, you’ll download a version-appropriate example code file from the S
 
     ![lab 5 ai-gen-code 1](../../images/open-ai-gen-1.png)
 
-    Follow the steps to make changes to your project. To apply the AI-generated code, select the **Apply** button, and complete any subsequent prompts. For details, refer to the following screenshot.
+    Follow the recommended steps to make changes to your project. To apply any AI-generated code snippets, select the **Apply** button at the top right of the sample code box, and complete any subsequent prompts. Refer to the following screenshot for the location of the Apply button.
 
     ![lab 5 ai-gen-code 2](../../images/open-ai-gen-2.png)
 
