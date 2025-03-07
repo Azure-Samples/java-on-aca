@@ -102,7 +102,7 @@ To do this, you’ll download a version-appropriate example code file from the S
 
     ![lab 5 ai-gen-code 1](../../images/open-ai-gen-1.png)
 
-    Follow the recommended steps to make changes to your project. To apply any AI-generated code snippets, select the **Apply** button at the top right of the sample code box, and complete any subsequent prompts. Refer to the following screenshot for the location of the Apply button.
+    Follow the recommended steps to make changes to your project. To apply any AI-generated code snippets, select the **Apply** button at the top right of the sample code box, and complete any subsequent prompts to create or modify files as Copilot recommends. 
 
     ![lab 5 ai-gen-code 2](../../images/open-ai-gen-2.png)
 
