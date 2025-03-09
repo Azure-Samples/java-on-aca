@@ -1,0 +1,20 @@
+{
+    "$schema": "https://aka.ms/azd-extension-schema",
+    "name": "java-on-ai-extension",
+    "version": "1.1.0",
+    "description": "Java on AI AZD extension with bash",
+    "publisher": "Pete Tian",
+    "commands": [
+      {
+        "name": "hello",
+        "description": "My first AZD command",
+        "entryPoint": "./scripts/hello.sh"
+      },
+      {
+        "name": "goodbye",
+        "description": "My second AZD command",
+        "entryPoint": "./scripts/goodbye.sh"
+      }
+    ]
+  }
+  

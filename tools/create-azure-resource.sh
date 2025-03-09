@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-source ./azure-resource.profile
-source ./funcs.sh
+export HOME=/workspaces/java-on-aca
+
+source ./tools/azure-resource.profile
+source ./tools/funcs.sh
 
 # Resource Group
+
+# Random regions for MySQL server
+LOCATION=$(random_element australiaeast brazilsouth eastasia eastus2 japaneast southindia swedencentral westus)
 
 az group create -g $RESOURCE_GROUP -l $LOCATION -o table
 
@@ -11,21 +16,18 @@ az configure --default group=$RESOURCE_GROUP
 
 # MySQL server
 
-# Random regions for MySQL server
-SQL_LOCATION=$(random_element australiaeast brazilsouth eastasia eastus2 japaneast southindia swedencentral westus)
-
 SQL_ID=$(az mysql flexible-server show --resource-group $RESOURCE_GROUP --name $MYSQL_SERVER_NAME -o tsv --query id 2>/dev/null)
 if [[ -n $SQL_ID ]]; then
     echo -e "${GREEN}INFO:${NC} MySQL server $MYSQL_SERVER_NAME already exists"
 else
-    echo -e "${YELLOW}INFO:${NC} Creating MySQL server $MYSQL_SERVER_NAME in region $SQL_LOCATION ..."
+    echo -e "${YELLOW}INFO:${NC} Creating MySQL server $MYSQL_SERVER_NAME in region $LOCATION ..."
 
     az mysql flexible-server create \
         --admin-user $MYSQL_ADMIN_USERNAME \
         --admin-password $MYSQL_ADMIN_PASSWORD \
         --name $MYSQL_SERVER_NAME \
         --resource-group $RESOURCE_GROUP \
-        --location $SQL_LOCATION \
+        --location $LOCATION \
         --public-access none \
         --yes \
         --output table
@@ -49,18 +51,16 @@ fi
 
 # Azure OpenAI Service
 
-AI_LOCATION=$(random_element australiaeast brazilsouth eastus2 japaneast southindia swedencentral westus)
-
 AI_ID=$(az cognitiveservices account show --resource-group $RESOURCE_GROUP --name $OPEN_AI_SERVICE_NAME -o tsv --query id 2>/dev/null)
 if [[ -n $ACR_ID ]]; then
     echo -e "${GREEN}INFO:${NC} OpenAI instance $OPEN_AI_SERVICE_NAME already exists"
 else
-    echo -e "${YELLOW}INFO:${NC} Creating OpenAI instance $OPEN_AI_SERVICE_NAME in region $AI_LOCATION ..."
+    echo -e "${YELLOW}INFO:${NC} Creating OpenAI instance $OPEN_AI_SERVICE_NAME in region $LOCATION ..."
 
     az cognitiveservices account create \
     --resource-group $RESOURCE_GROUP \
     --name $OPEN_AI_SERVICE_NAME \
-    --location $AI_LOCATION \
+    --location $LOCATION \
     --kind OpenAI \
     --sku s0 \
     --custom-domain $OPEN_AI_SERVICE_NAME \
@@ -122,18 +122,16 @@ fi
 
 # Azure Managed Grafana
 
-GRAFANA_LOCATION=$(random_element australiaeast brazilsouth centralindia eastasia eastus2 japaneast swedencentral westus)
-
 GRAFANA_ID=$(az grafana show --name $GRAFANA_NAME --resource-group $RESOURCE_GROUP -o tsv --query id 2>/dev/null)
 if [[ -n $GRAFANA_ID ]]; then
     echo -e "${GREEN}INFO:${NC} Grafana instance $GRAFANA_NAME already exists"
 else
-    echo -e "${YELLOW}INFO:${NC} Creating Grafana instance $GRAFANA_NAME in region $GRAFANA_LOCATION ..."
+    echo -e "${YELLOW}INFO:${NC} Creating Grafana instance $GRAFANA_NAME in region $LOCATION ..."
 
     az deployment group create \
         --resource-group $RESOURCE_GROUP \
         --template-file ../infra/bicep/modules/grafana/grafana-dashboard.bicep \
-        --parameters grafanaName=$GRAFANA_NAME location=$GRAFANA_LOCATION \
+        --parameters grafanaName=$GRAFANA_NAME location=$LOCATION \
         --output table
 fi
 
