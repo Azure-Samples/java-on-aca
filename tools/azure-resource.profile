@@ -27,7 +27,7 @@ OPEN_AI_SERVICE_NAME=open-ai-account-$UNIQUEID
 
 ###############  Optional  ###############
 # Set RUN_OPTIONAL to true if you want to deploy resources for Lab 4 & Lab 5
-RUN_OPTIONAL=false
+RUN_OPTIONAL=true
 
 # Set the below variables if RUN_OPTIONAL=true
 

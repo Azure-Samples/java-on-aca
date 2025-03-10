@@ -133,7 +133,7 @@ else
 
     az deployment group create \
         --resource-group $RESOURCE_GROUP \
-        --template-file ../infra/bicep/modules/grafana/grafana-dashboard.bicep \
+        --template-file $DIR/../infra/bicep/modules/grafana/grafana-dashboard.bicep \
         --parameters grafanaName=$GRAFANA_NAME location=$GRAFANA_LOCATION \
         --output table
 fi
