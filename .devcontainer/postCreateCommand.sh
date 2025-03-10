@@ -2,7 +2,10 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-azd config set alpha.deployment.stacks on
+CHECK_AZD=$(which azd)
+if [[ ! -z "$CHECK_AZD" ]]; then
+    azd config set alpha.deployment.stacks on
+fi
 
 grep JAVA_AI_FUNC "$HOME/.bashrc" > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then

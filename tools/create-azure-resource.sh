@@ -29,8 +29,7 @@ else
         --resource-group $RESOURCE_GROUP \
         --location $SQL_LOCATION \
         --public-access none \
-        --yes \
-        --output table
+        --yes
 fi
 
 # Azure Container Registry
