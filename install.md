@@ -100,7 +100,13 @@ Now you'll run the script `prepare.sh` to register the required resources provid
 
 You'll now run the script `create-azure-resource.sh`, which will create several of the Azure resource dependencies that you need in the labs.
 
-1.  Before running the script, you'll need to edit the file `./tools/azure-resource.profile` in a code editor and update the following values:
+1.  Before running the script, you'll need to make a copy of the file `./tools/azure-resource.profile.template`.
+
+    ```bash
+    cp ./tools/azure-resource.profile.template ./tools/azure-resource.profile
+    ```
+
+    Edit the file `./tools/azure-resource.profile` in a code editor and update the following values:
 
     - `UNIQUEID` - Create a unique ID string and paste that in the code editor. You can use the following command generate an acceptable value: `openssl rand -hex 3`
     - `SUBSCRIPTION` - Enter the ID of the subscription you're going to work in. To quickly find this id, use the following command: `az account show --query id`
