@@ -5,6 +5,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/azure-resource.profile
 source $DIR/funcs.sh
 
+shopt -s expand_aliases
+source $DIR/../.devcontainer/funcs.sh
+
 # Resource Group
 
 az group create -g $RESOURCE_GROUP -l $LOCATION -o table
@@ -106,6 +109,7 @@ fi
 
 # Application Insights
 
+WORKSPACE_ID=$(az monitor log-analytics workspace show -n $WORKSPACE -g $RESOURCE_GROUP --query id -o tsv 2>/dev/null)
 APP_INSIGHTS_ID=$(az monitor app-insights component show --resource-group $RESOURCE_GROUP --app $APP_INSIGHTS_NAME -o tsv --query id 2>/dev/null)
 if [[ -n $APP_INSIGHTS_ID ]]; then
     echo -e "${GREEN}INFO:${NC} Application Insights $APP_INSIGHTS_NAME already exists"
