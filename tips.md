@@ -42,7 +42,7 @@ There are a couple places in the lab where you can easily to miss steps or incor
    az containerapp logs show -g $RESOURCE_GROUP -n <APP_NAME>
    ```
 
-### Dealing with code errors
+## Dealing with code errors
 
 If you find coding issues that lead to errors, fix the issues and then rebuild and redeploy the affected application.
 
